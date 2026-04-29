@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+      color: #2d3436;
+    }
+
+    .page {
+      width: 210mm;
+      height: 297mm;
+      padding: 0;
+      margin: 0;
+      position: relative;
+      overflow: hidden; /* Keeps shapes inside the page */
+      background: #fff;
+    }
+
+    /* --- DECORATIVE SHAPES --- */
+    .shape-top-right {
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 300px;
+      height: 300px;
+      background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .shape-bottom-left {
+      position: absolute;
+      bottom: -100px;
+      left: -100px;
+      width: 400px;
+      height: 400px;
+      background: #f1f2f6;
+      border-radius: 80px;
+      transform: rotate(30deg);
+      z-index: 0;
+    }
+
+    .accent-bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 15px;
+      height: 100%;
+      background: #6c5ce7;
+      z-index: 2;
+    }
+
+    /* --- CONTENT CONTAINER --- */
+    .content {
+      position: relative;
+      z-index: 10;
+      padding: 40mm 20mm;
+    }
+
+    .header {
+      margin-bottom: 50px;
+    }
+
+    .teacher-id {
+      display: inline-block;
+      background: #6c5ce7;
+      color: white;
+      padding: 5px 15px;
+      border-radius: 50px;
+      font-size: 10pt;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-size: 32pt;
+      margin: 0;
+      color: #2d3436;
+      line-height: 1.1;
+    }
+
+    .subtitle {
+      font-size: 12pt;
+      color: #636e72;
+      margin-top: 5px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /* --- DATA GRID --- */
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid #dfe6e9;
+      border-radius: 15px;
+      padding: 20px;
+      width: calc(50% - 35px);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    }
+
+    .card-label {
+      font-size: 9pt;
+      font-weight: 700;
+      color: #6c5ce7;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .card-value {
+      font-size: 13pt;
+      font-weight: 400;
+      color: #2d3436;
+    }
+
+    /* --- DECORATIVE ICON PLACEHOLDER --- */
+    .decoration-icon {
+      width: 60px;
+      height: 5px;
+      background: #6c5ce7;
+      margin: 20px 0;
+      border-radius: 5px;
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 20mm;
+      left: 20mm;
+      right: 20mm;
+      z-index: 10;
+      border-top: 1px solid #dfe6e9;
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 9pt;
+      color: #b2bec3;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="accent-bar"></div>
+    <div class="shape-top-right"></div>
+    <div class="shape-bottom-left"></div>
+
+    <div class="content">
+      <div class="header">
+        <span class="teacher-id">ID: {{Teacher ID}}</span>
+        <h1>{{Full Name}}</h1>
+        <div class="subtitle">Official Faculty Document</div>
+        <div class="decoration-icon"></div>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <span class="card-label">Department</span>
+          <span class="card-value">{{Department}}</span>
+        </div>
+        
+        <div class="card">
+          <span class="card-label">Grade Level</span>
+          <span class="card-value">{{Grade Level}}</span>
+        </div>
+
+        <div class="card">
+          <span class="card-label">Email Contact</span>
+          <span class="card-value">{{Email Address}}</span>
+        </div>
+
+        <div class="card">
+          <span class="card-label">Professional Tenure</span>
+          <span class="card-value">{{Years of Experience}} Years</span>
+        </div>
+      </div>
+
+      <div style="margin-top: 60px; color: #636e72; line-height: 1.6;">
+        <h3>Professional Summary</h3>
+        <p>This document verifies that <strong>{{Full Name}}</strong> is a registered faculty member within the <strong>{{Department}}</strong> department, currently overseeing <strong>{{Grade Level}}</strong> curriculum. With {{Years of Experience}} years of experience, they are a valued member of our academic community.</p>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span>Official Record &bull; {{Department}}</span>
+      <span>Page 1 of 1</span>
+    </div>
+  </div>
+</body>
+</html>
