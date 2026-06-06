@@ -4,7 +4,13 @@
   "description": "",
   "main": "math.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "push": "npm run lint && npm run typecheck && npm run format:check && npm test && clasp push"
   },
   "repository": {
     "type": "git",
@@ -19,6 +25,13 @@
   },
   "homepage": "https://github.com/Nala911/Hippo_Appscripts#readme",
   "devDependencies": {
-    "jest": "^30.4.2"
+    "@types/google-apps-script": "^2.0.11",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^25.9.2",
+    "eslint": "^10.4.1",
+    "eslint-plugin-googleappsscript": "^1.0.5",
+    "jest": "^30.4.2",
+    "prettier": "^3.8.3",
+    "typescript": "^6.0.3"
   }
 }
