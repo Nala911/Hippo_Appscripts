@@ -1,0 +1,24 @@
+{
+  "name": "google-sheet-udfs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "math.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nala911/Hippo_Appscripts.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Nala911/Hippo_Appscripts/issues"
+  },
+  "homepage": "https://github.com/Nala911/Hippo_Appscripts#readme",
+  "devDependencies": {
+    "jest": "^30.4.2"
+  }
+}
